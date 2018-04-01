@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import FormLogin from './FormLogin';
 import Carousel from './ImageCarousel';
 import Cart from './Cart';
-import ProductCard from './ProductCard';
+import CategoryCard from './CategoryCard';
+import ProductPage from './ProductPage';
 import '../App.css';
 
 class Main extends Component {
@@ -14,8 +15,9 @@ class Main extends Component {
                         To get started, edit <code>src/App.js</code> and save to reload.
                     </p> */}
                     <Carousel/>
+                    <ProductPage/>
                     <FormLogin/>
-                    <ProductCard/>
+                    <CategoryCard/>
                     <Cart/>
                 </main> 
             </div>

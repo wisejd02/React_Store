@@ -38,3 +38,19 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.row .col.s4 {
+  /* width: 5%; */
+  /* margin-left: auto; */
+  /* left: auto; */
+  /* right: auto; */
+}
+.qty{
+  width: 50%;
+}
+.row .col {
+  /* float: left;
+  box-sizing: border-box;
+  padding: 0; 
+  min-height: 1px; */
+}
