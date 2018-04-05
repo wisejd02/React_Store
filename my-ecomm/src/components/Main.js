@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import FormLogin from './FormLogin';
+//import FormLogin from './FormLogin';
 import Carousel from './ImageCarousel';
-import Cart from './Cart';
-import CategoryCard from './CategoryCard';
-import ProductPage from './ProductPage';
+// import Cart from './Cart';
+import CategoryCards from './CategoryCards';
+// import ProductPage from './ProductPage';
 import '../App.css';
 
 class Main extends Component {
+
     render() {
         return (
             <div className="App main">
@@ -15,10 +16,10 @@ class Main extends Component {
                         To get started, edit <code>src/App.js</code> and save to reload.
                     </p> */}
                     <Carousel/>
-                    <ProductPage/>
-                    <FormLogin/>
-                    <CategoryCard/>
-                    <Cart/>
+                    {/* <ProductPage/> */}
+                    {/* <FormLogin/> */}
+                    <CategoryCards/>
+                    {/* <Cart/> */}
                 </main> 
             </div>
         );
