@@ -7,7 +7,7 @@ class Header extends Component {
         return (
             <div className="App">
             <header>
-                <Navbar brand='JMGadDesign' right>
+                <Navbar className="fancy-font" brand='JMGadDesign' right>
                     <img src={logo} className="App-logo" alt="logo" />
                     <NavItem href='get-started.html'><Icon>search</Icon></NavItem>
                     <NavItem href='get-started.html'><Icon>view_module</Icon></NavItem>

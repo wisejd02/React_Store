@@ -25,23 +25,46 @@ class CategoryCard extends Component {
             
             <Row >
                 <Col m={3} s={3}>
-                    <Card horizontal="true" onClick={this.handleClick} key={'product1'} header={<CardTitle image={require("../images/mug.png")}></CardTitle>} actions={[<Link  key={'link1'} to='/category'>This is a link</Link>]}>
-                        <p>I am a very simple card. I am good at containing small bits of information</p>
+                    <Card horizontal="true" onClick={this.handleClick} key={'product1'} header={<CardTitle image={require("../images/category/mug.png")}></CardTitle>} actions={[<Link  key={'link1'} to='/mugs'>This is a link</Link>]}>
+                        <p>Personalized</p>
                     </Card>
                 </Col>
                 <Col m={3} s={3}>
-                    <Card horizontal="true" onClick={this.handleClick} key={"product2"} header={<CardTitle image={require("../images/hat.png")}></CardTitle>} actions={[<Link key={'link2'} to='/category'>This is a link</Link>]}>
-                        <p>I am a very simple card. I am good at containing small bits of information</p>
+                    <Card horizontal="true" onClick={this.handleClick} key={"product2"} header={<CardTitle image={require("../images/category/hat.png")}></CardTitle>} actions={[<Link key={'link2'} to='/hats'>This is a link</Link>]}>
+                        <p>Custom Hats</p>
                     </Card>
                 </Col>
                 <Col m={3} s={3}>
-                    <Card horizontal="true" onClick={this.handleClick} key={"product3"} header={<CardTitle image={require("../images/bag.png")}></CardTitle>} actions={[<Link key={'link3'} to='/category'>This is a link</Link>]}>
-                        <p>I am a very simple card. I am good at containing small bits of information</p>
+                    <Card horizontal="true" onClick={this.handleClick} key={"product3"} header={<CardTitle image={require("../images/category/bag.png")}></CardTitle>} actions={[<Link key={'link3'} to='/bags'>This is a link</Link>]}>
+                        <p>Custom Bags, Aprons...</p>
                     </Card>
                 </Col>
                 <Col m={3} s={3}>
-                    <Card horizontal="true" onClick={this.handleClick} key={"product4"} header={<CardTitle image={require("../images/embroidery.png")}></CardTitle>} actions={[<Link key={'link4'} to='/category'>This is a link</Link>]}>
-                        <p>I am a very simple card. I am good at containing small bits of information</p>
+                    <Card horizontal="true" onClick={this.handleClick} key={"product4"} header={<CardTitle image={require("../images/category/t-shirt.png")}></CardTitle>} actions={[<Link key={'link4'} to='/shirts'>This is a link</Link>]}>
+                        <p>Custom Shirts</p>
+                    </Card>
+                </Col>
+                
+            </Row> 
+            <Row >
+                <Col m={3} s={3}>
+                    <Card horizontal="true" onClick={this.handleClick} key={'product5'} header={<CardTitle image={require("../images/category/embroidery.png")}></CardTitle>} actions={[<Link  key={'link5'} to='/embroidery'>This is a link</Link>]}>
+                        <p>Embroidery/Monogram</p>
+                    </Card>
+                </Col>
+                <Col m={3} s={3}>
+                    <Card horizontal="true" onClick={this.handleClick} key={"product6"} header={<CardTitle image={require("../images/category/invitation.png")}></CardTitle>} actions={[<Link key={'link6'} to='/invitation'>This is a link</Link>]}>
+                        <p>Invitations and Cards</p>
+                    </Card>
+                </Col>
+                <Col m={3} s={3}>
+                    <Card horizontal="true" onClick={this.handleClick} key={"product7"} header={<CardTitle image={require("../images/category/brochure.png")}></CardTitle>} actions={[<Link key={'link7'} to='/brochure'>This is a link</Link>]}>
+                        <p>Label, Brochure, Flyers</p>
+                    </Card>
+                </Col>
+                <Col m={3} s={3}>
+                    <Card horizontal="true" onClick={this.handleClick} key={"product8"} header={<CardTitle image={require("../images/category/gift_boxes.png")}></CardTitle>} actions={[<Link key={'link8'} to='/gift_boxes'>This is a link</Link>]}>
+                        <p>Gift Boxes</p>
                     </Card>
                 </Col>
                 

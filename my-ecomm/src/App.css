@@ -13,9 +13,13 @@
   padding: 20px;
   color: white;
 }
-
-.App-title {
+.fancy-font{
+  font-family: 'Great Vibes', cursive;
+  
+}
+.App-title{
   font-size: 1.5em;
+ 
 }
 
 .App-intro {
@@ -25,12 +29,18 @@
   margin-left: 25px;
 }
 .leftMv50{
-  margin-left: 50px;
+  margin-left: 15%;
+  
 }
 .prodEle{
   /* width: 100%; */
   margin-left: 25px;
   margin-right: 100px;
+}
+
+.card-image{
+  width: 100%;
+  height: 220px;
 }
 
 table{
@@ -54,6 +64,7 @@ table{
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
 
 .row .col.s4 {
   padding: 0;
