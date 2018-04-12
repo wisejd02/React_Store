@@ -12,6 +12,7 @@ import Shirts from './ShirtCards';
 import Invitation from './InvitationCards';
 import Brochure from './BrochureCards';
 import Gift_Boxes from './Gift_BoxesCards';
+import Product from './ProductPage'
 import Cart from './Cart';
 import NotFound from './NotFound';
 // import CategoryCard from './CategoryCards';
@@ -33,6 +34,7 @@ const Router = () =>(
             <Route exact path='/invitation' component={Invitation}/>
             <Route exact path='/brochure' component={Brochure}/>
             <Route exact path='/gift_boxes' component={Gift_Boxes}/>
+            <Route exact path='/product' component={Product}/>
             <Route exact path='/cart' component={Cart}/>
             {/* if route is  */}
             <Route component={NotFound}/>
