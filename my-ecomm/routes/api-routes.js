@@ -65,8 +65,9 @@ module.exports = function(app) {
     // Update takes in an object describing the properties we want to update, and
     // we use where to describe which objects we want to update
     db.Products.update({
-      text: req.body.text,
-      complete: req.body.complete
+      // text: req.body.text,
+      // complete: req.body.complete
+      inventory: 6
     }, {
       where: {
         id: req.body.id
