@@ -5,10 +5,11 @@ import '../App.css';
 class Header extends Component {
     render() {
         return (
-            <div className="App">
+            <div className="">
             <header>
                 <Navbar className="fancy-font" brand='JMGadDesign' right>
                     <img src={logo} className="App-logo" alt="logo" />
+                    <Icon left>shopping_cart</Icon>
                     <NavItem href='get-started.html'><Icon>search</Icon></NavItem>
                     <NavItem href='get-started.html'><Icon>view_module</Icon></NavItem>
                     <NavItem href='get-started.html'><Icon>refresh</Icon></NavItem>

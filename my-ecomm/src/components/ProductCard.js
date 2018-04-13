@@ -6,7 +6,7 @@ class ProductCard extends Component {
     render() {
         return (
             <Row>
-                <MediaBox src="https://lorempixel.com/350/350/nature/1" caption="A demo media box1" width="350"/>
+                <MediaBox src={require("../images/mugs/custom logo msg mug.jpeg")} caption="A demo media box1" width="350"/>
             </Row> 
         );
     }
