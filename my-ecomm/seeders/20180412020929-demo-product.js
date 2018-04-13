@@ -21,8 +21,8 @@ module.exports = {
         Options: "",
         inventory: 12,
         category: "Drink",
-        createdAt:"",
-        updatedAt:""
+        createdAt:"CURRENT_TIMESTAMP",
+        updatedAt:"CURRENT_TIMESTAMP"
       },{
         id:"",
         Product: "Tall Mug",
@@ -31,8 +31,8 @@ module.exports = {
         Options: "",
         inventory: 10,
         category: "Drink",
-        createdAt:"",
-        updatedAt:""
+        createdAt:"CURRENT_TIMESTAMP",
+        updatedAt:"CURRENT_TIMESTAMP"
       },{
         id:"",
         Product: "Glass Tumbler",
@@ -41,8 +41,8 @@ module.exports = {
         Options: "",
         inventory: 8,
         category: "Drink",
-        createdAt:"",
-        updatedAt:""
+        createdAt:"CURRENT_TIMESTAMP",
+        updatedAt:"CURRENT_TIMESTAMP"
       },{
         id:"",
         Product: "Mug",
@@ -51,8 +51,8 @@ module.exports = {
         Options: "",
         inventory: 6,
         category: "Drink",
-        createdAt:"",
-        updatedAt:""
+        createdAt:"CURRENT_TIMESTAMP",
+        updatedAt:"CURRENT_TIMESTAMP"
       }], {});
     
   },
