@@ -21,7 +21,7 @@ module.exports = function(app) {
     });
   });
 
-  // POST route for saving a new todo
+  // POST route for saving a new product
   app.post("/api/products", function(req, res) {
     // create takes an argument of an object describing the item we want to
     // insert into our table. In this case we just we pass in an object with a text
@@ -35,7 +35,7 @@ module.exports = function(app) {
         Options: "",
         inventory: 6
     }).then(function(Products) {
-      // We have access to the new todo as an argument inside of the callback function
+      // We have access to the new product as an argument inside of the callback function
       res.json(Products);
     })
     .catch(function(err) {
@@ -45,10 +45,10 @@ module.exports = function(app) {
     });
   });
 
-  // DELETE route for deleting todos. We can get the id of the todo to be deleted from
+  // DELETE route for deleting product. We can get the id of the product to be deleted from
   // req.params.id
   app.delete("/api/products/:id", function(req, res) {
-    // We just have to specify which todo we want to destroy with "where"
+    // We just have to specify which product we want to destroy with "where"
     db.Products.destroy({
       where: {
         id: req.params.id
@@ -59,7 +59,7 @@ module.exports = function(app) {
 
   });
 
-  // PUT route for updating todos. We can get the updated todo data from req.body
+  // PUT route for updating product. We can get the updated todo data from req.body
   app.put("/api/products", function(req, res) {
 
     // Update takes in an object describing the properties we want to update, and
