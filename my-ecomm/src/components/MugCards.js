@@ -11,6 +11,23 @@ class PersonalizedCard extends Component {
 
     }
 
+    componentDidMount() {
+        let self = this;
+        fetch('/mugs', {
+            method: 'GET'
+        }).then(function(response) {
+            if (response.status >= 400) {
+                throw new Error("Bad response from server");
+            }
+            return response.json();
+        }).then(function(data) {
+            console.log(data);
+            //self.setState({users: data});
+        }).catch(err => {
+        console.log('caught it!',err);
+        })
+    }
+
     //bind function to class/parent
     handleClick(e) {
         e.preventDefault();

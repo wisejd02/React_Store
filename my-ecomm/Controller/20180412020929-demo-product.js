@@ -21,6 +21,7 @@ module.exports = {
         Options: "",
         inventory: 12,
         category: "Drink",
+        image:"../images/mugs/custom logo msg mug.jpeg",
         createdAt:"CURRENT_TIMESTAMP",
         updatedAt:"CURRENT_TIMESTAMP"
       },{
@@ -31,6 +32,7 @@ module.exports = {
         Options: "",
         inventory: 10,
         category: "Drink",
+        image:"../images/mugs/custom logo msg mug.jpeg",
         createdAt:"CURRENT_TIMESTAMP",
         updatedAt:"CURRENT_TIMESTAMP"
       },{
@@ -41,6 +43,7 @@ module.exports = {
         Options: "",
         inventory: 8,
         category: "Drink",
+        image:"../images/mugs/custom logo msg mug.jpeg",
         createdAt:"CURRENT_TIMESTAMP",
         updatedAt:"CURRENT_TIMESTAMP"
       },{
@@ -51,6 +54,7 @@ module.exports = {
         Options: "",
         inventory: 6,
         category: "Drink",
+        image:"../images/mugs/custom logo msg mug.jpeg",
         createdAt:"CURRENT_TIMESTAMP",
         updatedAt:"CURRENT_TIMESTAMP"
       }], {});
