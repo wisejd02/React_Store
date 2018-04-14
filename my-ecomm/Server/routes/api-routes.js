@@ -12,8 +12,8 @@ var db = require("../models");
 // =============================================================
 module.exports = function(app) {
 
-  // GET route for getting all of the todos
-  app.get("/mugs", function(req, res) {
+  // GET route for getting all of the products
+  app.get("/api/products", function(req, res) {
     // findAll returns all entries for a table when used with no options
     db.Products.findAll({}).then(function(dbProducts) {
       // We have access to the todos as an argument inside of the callback function
@@ -21,6 +21,17 @@ module.exports = function(app) {
     });
   });
 
+  // GET route for getting specific product
+  app.get("/api/products/:id", function(req, res) {
+    db.Products.findAll({ 
+      where: {
+        id: req.params.id
+      }
+    }).then(function(dbProducts) {
+      res.json(dbProducts);
+    });
+  });
+  
   // POST route for saving a new product
   app.post("/api/products", function(req, res) {
     // create takes an argument of an object describing the item we want to
@@ -32,8 +43,11 @@ module.exports = function(app) {
         Product: "Mug",
         ProductDescr: "Tradtional mug.",
         Price: 8.00,
-        Options: "",
-        inventory: 6
+        Options_A: "",
+        Options_B:"",
+        Inventory: 6,
+        Category:"Drink",
+        Image: ""
     }).then(function(Products) {
       // We have access to the new product as an argument inside of the callback function
       res.json(Products);
