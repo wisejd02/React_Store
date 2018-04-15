@@ -1,0 +1,110 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+.fancy-font{
+  /* font-family: 'Great Vibes', cursive; */
+  font-family: 'Berkshire Swash', cursive;
+  
+}
+.App-title{
+  font-size: 1.5em;
+ 
+}
+input {
+  text-align: center;
+}
+nav .brand-logo {
+  font-size: 3rem;
+  margin-left: 3rem;
+}
+
+.App-intro {
+  font-size: large;
+}
+.leftMv25{
+  margin-left: 25px;
+}
+.leftMv50{
+  margin-left: 15%;
+  
+}
+.prodEle{
+  margin-left: 87px;
+  margin-right: 100px;
+}
+
+.row .col.l6 {
+  width: 100%;
+    margin-left: auto;
+    left: auto;
+    right: auto;
+}
+
+.card-image{
+  display: flex;
+  min-height: 35vh;
+  max-height: 35vh;
+  
+}
+.ico-sm {
+  height: 75px;
+  padding: 5px;
+}
+.card .card-action {
+  /* display: flex; */
+  padding: 0px 0px 0px 0px;
+  
+  min-width: 100%;
+  height: 50px;
+  font-size: auto;
+}
+
+table{
+  width: 100%;
+  
+}
+tbody{
+  border-bottom: 2px solid black;
+}
+
+tfoot tr th{
+  /* display: table-footer-group; */
+  vertical-align: middle;
+  border-color: inherit;
+  text-align: right;
+  
+}
+ .main {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    flex: 1 0 auto;
+ }
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+
+.row .col.s4 {
+  padding: 0;
+}
+.qty{
+  width: 50%;
+}
+.row .col {
+  padding: 10px;
+}
