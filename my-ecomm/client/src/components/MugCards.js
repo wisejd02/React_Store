@@ -17,21 +17,15 @@ class PersonalizedCard extends Component {
         alert("did mount");
         this.getSelectedProduct("Drink");
     }
-        // fetch("/api/products",{method: 'GET'}).then(function(data){
-        //     console.log(data);
-        //   });
-        // $.get("/api/products", function(data) {
-        //     console.log(data);
-        //   });
 
-        getSelectedProduct = (category) => {
-            API.getSelectedProduct(category)
-              .then(res =>
-                console.log(res)
+    getSelectedProduct = (category) => {
+        API.getSelectedProduct(category)
+            .then(res =>
+                console.log(res.data)
                 // this.setState({
                 //   articles: res.data
                 // })
-              )
+            )
               .catch(err => console.log(err));
           };
         
@@ -51,27 +45,27 @@ class PersonalizedCard extends Component {
             
             <Row >
                 <Col m={3} s={3}>
-                    <Card horizontal="true" onClick={this.handleClick} key={'product1'} header={<CardTitle image={require("../images/mugs/custom logo msg mug.jpeg")}></CardTitle>} actions={[<Link  key={'link1'} to='/product'>This is a link</Link>]}>
+                    <Card horizontal="true" onClick={this.handleClick} key={'product1'} header={<CardTitle image={require("../images/mugs/custom logo msg mug.jpeg")}></CardTitle>} actions={[<Link  key={'link1'} to='/product'>Purchase</Link>]}>
                         <p></p>
                     </Card>
                 </Col>
                 <Col m={3} s={3}>
-                    <Card horizontal="true" onClick={this.handleClick} key={"product2"} header={<CardTitle image={require("../images/mugs/custom tall mug.jpeg")}></CardTitle>} actions={[<Link key={'link2'} to='/product'>This is a link</Link>]}>
+                    <Card horizontal="true" onClick={this.handleClick} key={"product2"} header={<CardTitle image={require("../images/mugs/custom tall mug.jpeg")}></CardTitle>} actions={[<Link key={'link2'} to='/product'>Purchase</Link>]}>
                         <p></p>
                     </Card>
                 </Col>
                 <Col m={3} s={3}>
-                    <Card horizontal="true" onClick={this.handleClick} key={"product3"} header={<CardTitle image={require("../images/mugs/chalice glass.png")}></CardTitle>} actions={[<Link key={'link3'} to='/product'>This is a link</Link>]}>
+                    <Card horizontal="true" onClick={this.handleClick} key={"product3"} header={<CardTitle image={require("../images/mugs/chalice glass.png")}></CardTitle>} actions={[<Link key={'link3'} to='/product'>Purchase</Link>]}>
                         <p></p>
                     </Card>
                 </Col>
                 <Col m={3} s={3}>
-                    <Card horizontal="true" onClick={this.handleClick} key={"product4"} header={<CardTitle image={require("../images/mugs/glass tumbler.png")}></CardTitle>} actions={[<Link key={'link4'} to='/product'>This is a link</Link>]}>
+                    <Card horizontal="true" onClick={this.handleClick} key={"product4"} header={<CardTitle image={require("../images/mugs/glass tumbler.png")}></CardTitle>} actions={[<Link key={'link4'} to='/product'>Purchase</Link>]}>
                         <p></p>
                     </Card>
                 </Col>
                 <Col m={3} s={3}>
-                    <Card horizontal="true" onClick={this.handleClick} key={'product5'} header={<CardTitle image={require("../images/mugs/personal pic mug.jpeg")}></CardTitle>} actions={[<Link  key={'link5'} to='/product/'>This is a link</Link>]}>
+                    <Card horizontal="true" onClick={this.handleClick} key={'product5'} header={<CardTitle image={require("../images/mugs/personal pic mug.jpeg")}></CardTitle>} actions={[<Link  key={'link5'} to='/product/'>Purchase</Link>]}>
                         <p></p>
                     </Card>
                 </Col>

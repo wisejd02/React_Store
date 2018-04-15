@@ -13,7 +13,7 @@ export default {
     // http://localhost:3001/api/products/:Drinks
     return axios.get("/api/products/cat/" + prod );
   },
-  getBaseBreedsList: function() {
-    return axios.get("https://dog.ceo/api/breeds/list");
+  getSelectedItem: function(id) {
+    return axios.get("/api/products/"+id);
   }
 };
