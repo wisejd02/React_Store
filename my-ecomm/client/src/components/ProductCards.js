@@ -21,7 +21,7 @@ class PersonalizedCard extends Component {
         var currentLocation = window.location;
         var product = currentLocation.pathname.split("/");
          console.log(product);
-        this.getSelectedProduct(product[1]);
+        this.getSelectedProduct(product[2]);
     }
 
     getSelectedProduct = (category) => {

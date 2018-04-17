@@ -25,22 +25,22 @@ class CategoryCard extends Component {
             
             <Row >
                 <Col m={3} s={3}>
-                    <Card horizontal="true" onClick={this.handleClick} key={'product1'} header={<CardTitle image={require("../images/category/mug.png")}></CardTitle>} actions={[<Link  key={'link1'} to='/mugs'>Cups, Mugs</Link>]}>
+                    <Card horizontal="true" onClick={this.handleClick} key={'product1'} header={<CardTitle image={require("../images/category/mug.png")}></CardTitle>} actions={[<Link  key={'link1'} to='/category/mugs'>Cups, Mugs</Link>]}>
                         {/* <p>Cups, Mugs</p> */}
                     </Card>
                 </Col>
                 <Col m={3} s={3}>
-                    <Card horizontal="true" onClick={this.handleClick} key={"product2"} header={<CardTitle image={require("../images/category/hat.png")}></CardTitle>} actions={[<Link key={'link2'} to='/hats'>Custom Hats</Link>]}>
+                    <Card horizontal="true" onClick={this.handleClick} key={"product2"} header={<CardTitle image={require("../images/category/hat.png")}></CardTitle>} actions={[<Link key={'link2'} to='/category/hats'>Custom Hats</Link>]}>
                         {/* <p>Custom Hats</p> */}
                     </Card>
                 </Col>
                 <Col m={3} s={3}>
-                    <Card horizontal="true" onClick={this.handleClick} key={"product3"} header={<CardTitle image={require("../images/category/bag.png")}></CardTitle>} actions={[<Link key={'link3'} to='/bags'>Bags, Aprons</Link>]}>
+                    <Card horizontal="true" onClick={this.handleClick} key={"product3"} header={<CardTitle image={require("../images/category/bag.png")}></CardTitle>} actions={[<Link key={'link3'} to='category/bags'>Bags, Aprons</Link>]}>
                         {/* <p>Bags, Aprons...</p> */}
                     </Card>
                 </Col>
                 <Col m={3} s={3}>
-                    <Card horizontal="true" onClick={this.handleClick} key={"product4"} header={<CardTitle image={require("../images/category/t-shirt.png")}></CardTitle>} actions={[<Link key={'link4'} to='/shirts'>Custom Shirts</Link>]}>
+                    <Card horizontal="true" onClick={this.handleClick} key={"product4"} header={<CardTitle image={require("../images/category/t-shirt.png")}></CardTitle>} actions={[<Link key={'link4'} to='category/shirts'>Custom Shirts</Link>]}>
                         {/* <p>Custom Shirts</p> */}
                     </Card>
                 </Col>
