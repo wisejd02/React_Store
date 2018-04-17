@@ -40,7 +40,7 @@ class ProductPage extends Component {
                 // })
                 this.state.cart.push(res.data)
             ).catch(err => console.log(err));
-            this.state.cart.noItems.setState(this.state.count);
+            //this.state.cart.noItems.(this.state.count);
             console.log(this.state);
     };
 
