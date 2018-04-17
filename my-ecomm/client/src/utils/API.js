@@ -9,7 +9,7 @@ export default {
 
   },
   getSelectedProduct: function(prod) {
-    alert(prod);
+    // alert(prod);
     // http://localhost:3001/api/products/:Drinks
     return axios.get("/api/products/cat/" + prod );
   },

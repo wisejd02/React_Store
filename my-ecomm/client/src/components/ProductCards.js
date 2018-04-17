@@ -6,6 +6,9 @@ import API from "../utils/API";
 import {Link} from 'react-router-dom';
 
 class PersonalizedCard extends Component {
+    state = {
+        products: []
+      };
     constructor (props){
         super(props)
 
@@ -14,20 +17,22 @@ class PersonalizedCard extends Component {
     }
 
     componentDidMount() {
-        alert("did mount");
-        this.getSelectedProduct("Drink");
+        // alert("did mount");
+        var currentLocation = window.location;
+        var product = currentLocation.pathname.split("/");
+         console.log(product);
+        this.getSelectedProduct(product[1]);
     }
 
     getSelectedProduct = (category) => {
         API.getSelectedProduct(category)
             .then(res =>
-                console.log(res.data)
-                // this.setState({
-                //   articles: res.data
-                // })
-            )
-              .catch(err => console.log(err));
-          };
+                //console.log(res.data)
+                this.setState({
+                  products: res.data
+                })
+            ).catch(err => console.log(err));
+    };
         
 
     //bind function to class/parent
@@ -38,13 +43,37 @@ class PersonalizedCard extends Component {
         console.log('The link was clicked.');
         
     }
+
+    
     
     render() {
         return (
             <div className="App main leftMv50">
             
             <Row >
-                <Col m={3} s={3}>
+            {/* {this.state.products.length ? ( */}
+                {/* <div> */}
+                  {this.state.products.map(product => (
+                    <Col m={3} s={3} key={product.id}>
+                      <Card horizontal="true" 
+                        key={product.id} 
+                        header={
+                            <CardTitle image={product.Image}></CardTitle>
+                        } 
+                        actions={   
+                            [<Link id={product.id} key={product.id} to={'/product/'+product.id}>Purchase</Link>]
+                            }>
+                          <p></p>
+                      </Card>
+                    </Col>
+                  ))}
+                {/* </div> */}
+              {/* ) : (
+                <h2>No Products toDisplay</h2>
+              )} */}
+              </Row >
+              {/* <Row >
+              <Col m={3} s={3}>
                     <Card horizontal="true" onClick={this.handleClick} key={'product1'} header={<CardTitle image={require("../images/mugs/custom logo msg mug.jpeg")}></CardTitle>} actions={[<Link  key={'link1'} to='/product'>Purchase</Link>]}>
                         <p></p>
                     </Card>
@@ -69,7 +98,7 @@ class PersonalizedCard extends Component {
                         <p></p>
                     </Card>
                 </Col>
-            </Row> 
+            </Row>  */}
             <Row >
                 
             

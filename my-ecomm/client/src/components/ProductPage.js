@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Col, Row, Input, Button, Icon} from 'react-materialize';
-import ProductCard from './ProductCard';
+import ProductCard from './ItemCard';
 import '../App.css';
 
 class ProductPage extends Component {
@@ -13,7 +13,10 @@ class ProductPage extends Component {
       }
     
       handleDecrement = () => {
-        this.setState({ count: this.state.count - 1 });
+          if(this.state.count>0){
+            this.setState({ count: this.state.count - 1 });
+          }
+        
       }
     render() {
         return (
