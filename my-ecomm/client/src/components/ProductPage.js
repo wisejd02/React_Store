@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import {Col, Row, Input, Button, Icon} from 'react-materialize';
 import ProductCard from './ItemCard';
+import API from "../utils/API";
 import '../App.css';
 
 class ProductPage extends Component {
     state = {
-        count: 1
+        count: 1,
+        cart: []
       };
     
       handleIncrement = () => {
@@ -18,6 +20,30 @@ class ProductPage extends Component {
           }
         
       }
+      handleAddToCart =()=> {
+        if(this.state.count>0){
+            var currentLocation = window.location;
+            var itemId = currentLocation.pathname.split("/");
+            console.log(itemId[2]);
+            this.getSelectedItem(itemId[2]);
+            
+            
+        }
+      };
+
+      getSelectedItem = (id) => {
+        API.getSelectedItem(id)
+            .then(res =>
+                //console.log(res.data)
+                // this.setState({
+                //   item: res.data
+                // })
+                this.state.cart.push(res.data)
+            ).catch(err => console.log(err));
+            this.state.cart.noItems.setState(this.state.count);
+            console.log(this.state);
+    };
+
     render() {
         return (
         <div className="App main">
@@ -44,7 +70,7 @@ class ProductPage extends Component {
                         <a className="btn-floating btn-large waves-effect waves-light red "><i className="material-icons" onClick={this.handleDecrement}>remove</i></a>
                     </Col>
                     <Row>
-                        <Button className="red prodEle" waves='light' >Add to<Icon right>shopping_cart</Icon></Button>
+                        <Button className="red prodEle" waves='light' onClick={this.handleAddToCart} >Add to<Icon right>shopping_cart</Icon></Button>
                     </Row>
                 </Col>      
             </Row> 
