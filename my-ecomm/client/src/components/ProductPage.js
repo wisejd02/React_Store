@@ -5,10 +5,24 @@ import API from "../utils/API";
 import '../App.css';
 
 class ProductPage extends Component {
-    state = {
-        count: 1,
-        cart: []
-      };
+    constructor (props){
+        super(props)
+        this.state = {
+            count: 0,
+            item:0
+          };
+        this.handleChange = this.handleChange.bind(this);
+        this.handleIncrement = this.handleIncrement.bind(this);
+        this.handleDecrement = this.handleDecrement.bind(this);
+        this.handleAddToCart = this.handleAddToCart.bind(this)
+    
+    }
+    componentDidMount() {
+        var currentLocation = window.location;
+        var itemId = currentLocation.pathname.split("/");
+         console.log(itemId[2]);
+        this.getSelectedItem(itemId[2]);
+    }
     
       handleIncrement = () => {
         this.setState({ count: this.state.count + 1 });
@@ -20,14 +34,19 @@ class ProductPage extends Component {
           }
         
       }
-      handleAddToCart =()=> {
+      handleChange(event) {
+        this.setState({value: event.target.value});
+      }
+      
+
+      handleAddToCart = (e)=> {
+        e.preventDefault();
         if(this.state.count>0){
             var currentLocation = window.location;
             var itemId = currentLocation.pathname.split("/");
-            console.log(itemId[2]);
             this.getSelectedItem(itemId[2]);
-            
-            
+            console.log(this.state.item[0].id)
+            localStorage.setItem(this.state.item[0].id, JSON.stringify(this.state));  
         }
       };
 
@@ -35,44 +54,49 @@ class ProductPage extends Component {
         API.getSelectedItem(id)
             .then(res =>
                 //console.log(res.data)
-                // this.setState({
-                //   item: res.data
-                // })
-                this.state.cart.push(res.data)
+                 this.setState({
+                  item: res.data
+                })
             ).catch(err => console.log(err));
-            //this.state.cart.noItems.(this.state.count);
-            console.log(this.state);
+            console.log(this.state)            
     };
 
+   
+
     render() {
+        const numItm = this.state.count;
         return (
         <div className="App main">
             <Row>
                 <Col>
                     <ProductCard/>
                 </Col>
-                 <Col>   
-                    <Row className="leftMv50">
-                        <Input type='select' label='Select Option' defaultValue='1'>
-                            <option value='1'>Option 1</option>
-                            <option value='2'>Option 2</option>
-                            <option value='3'>Option 3</option>
-                        </Input>
-                    </Row> 
-                    <Col className=" leftMv25 valign-wrapper ">
-                        <a className="btn-floating btn-large waves-effect waves-light red prefix" onClick={this.handleIncrement}><i className="material-icons">add</i></a>
-                    </Col>
-                {/* <Col className=" qty"> */}
-                    <Input s={4} label="Qty" validate defaultValue={1} value={this.state.count}/>
+                
+                    <Col>  
+                    <form> 
+                        <Row className="leftMv50">
+                            <Input className="leftMv50" type='select' label='Select Option' defaultValue='1'>
+                                <option value='1'>Option 1</option>
+                                <option value='2'>Option 2</option>
+                                <option value='3'>Option 3</option>
+                            </Input>
+                        </Row> 
+                        <Col className=" leftMv25 valign-wrapper ">
+                            <a className="btn-floating btn-large waves-effect waves-light red prefix" onClick={this.handleIncrement}><i className="material-icons">add</i></a>
+                        </Col>
+                    {/* <Col className=" qty"> */}
+                        <Input s={4} type='text' label="Qty" validate value={numItm} onChange={this.handleChange}/>
+                        
+                        {/* </Col> */}
+                        <Col className=" valign-wrapper " >
+                            <a className="btn-floating btn-large waves-effect waves-light red "><i className="material-icons" onClick={this.handleDecrement}>remove</i></a>
+                        </Col>
+                        <Row>
+                            <Button className="red prodEle" waves='light' onClick={this.handleAddToCart} >Add to<Icon right>shopping_cart</Icon></Button>
+                        </Row>
+                        </form>
+                    </Col> 
                     
-                    {/* </Col> */}
-                    <Col className=" valign-wrapper " >
-                        <a className="btn-floating btn-large waves-effect waves-light red "><i className="material-icons" onClick={this.handleDecrement}>remove</i></a>
-                    </Col>
-                    <Row>
-                        <Button className="red prodEle" waves='light' onClick={this.handleAddToCart} >Add to<Icon right>shopping_cart</Icon></Button>
-                    </Row>
-                </Col>      
             </Row> 
         </div>
         );
