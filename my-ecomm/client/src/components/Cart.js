@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Icon} from 'react-materialize';
+import {Icon, Toast} from 'react-materialize';
 import $ from 'jquery';
 import '../App.css';
 
@@ -17,25 +17,11 @@ class Cart extends Component {
      handleClick(e) {
         e.preventDefault();
         console.log(e.target);
-        console.log(e);
         console.log( $(e.target).closest('td').attr('id') );
-        //this.props.offline() 
         var key = $(e.target).closest('td').attr('id');
         localStorage.removeItem(key);   
-        console.log('The link was clicked.');
-        this.forceUpdate()
-        // var p=e.parentNode.parentNode;
-        //  p.parentNode.removeChild(p);
+        this.forceUpdate();
         
-    }
-    componentDidMount() {
-    //    const cart = this.allStorage();
-    //     console.log(cart);
-    //     this.setState({
-    //         items:cart
-    //     })
-    //     console.log(this.state)
-    //     console.log(this.state.items);
     }
 
     allStorage = () => {
@@ -86,14 +72,12 @@ class Cart extends Component {
 
                     <tbody>
                     {cart.map(item => (
-                        
-                        // console.log(JSON.parse(item).item[0].Price)
                         <tr key={JSON.parse(item).item[0].id} >
                             <td><img src={JSON.parse(item).item[0].Image} alt={JSON.parse(item).item[0].Product} border="3" height="50" width="50"></img></td>
                             <td>{JSON.parse(item).item[0].Product}</td>
                             <td>{JSON.parse(item).count}</td>
                             <td>{parseFloat(JSON.parse(item).item[0].Price)}</td>
-                            <td onClick={this.handleClick} id={JSON.parse(item).item[0].id}><Icon>delete_forever</Icon></td>
+                            <td onClick={this.handleClick} id={JSON.parse(item).item[0].id}><Toast toast="Removed item from cart"><Icon className="hand-pntr">delete_forever</Icon></Toast></td>
                         </tr>
                         // <tr>
                         //     <td><img alt="reg mug wit logo" src={require("../images/mugs/custom logo msg mug.jpeg" )}border="3" height="50" width="50"/></td>

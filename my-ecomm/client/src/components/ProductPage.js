@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Col, Row, Input, Button, Icon} from 'react-materialize';
+import {Col, Row, Input, Button, Icon, Toast} from 'react-materialize';
 import ProductCard from './ItemCard';
 import API from "../utils/API";
 import '../App.css';
@@ -47,6 +47,7 @@ class ProductPage extends Component {
             this.getSelectedItem(itemId[2]);
             console.log(this.state.item[0].id)
             localStorage.setItem(this.state.item[0].id, JSON.stringify(this.state));  
+            window.Materialize.toast('Item added to cart!', 4000)
         }
       };
 
