@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {Card, CardTitle, Col, Row} from 'react-materialize';
 import '../App.css';
 import API from "../utils/API";
-// import $ from 'jquery';
 import {Link} from 'react-router-dom';
 
 class PersonalizedCard extends Component {
