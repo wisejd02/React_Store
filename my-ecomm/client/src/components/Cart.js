@@ -46,7 +46,7 @@ class Cart extends Component {
         if(cart){
             cart.map(item => (
                 //console.log(JSON.parse(item).item[0].Price)
-                total+=JSON.parse(item).item[0].Price
+                total+=JSON.parse(item).item[0].Price*JSON.parse(item).count
             ))
         }
         console.log(total);

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {MediaBox, Row} from 'react-materialize';
+import {MediaBox, Row, Col, Input} from 'react-materialize';
 import API from "../utils/API";
 import '../App.css';
 
@@ -32,11 +32,21 @@ class ProductCard extends Component {
 
     render() {
         return (
+            <div>
             <Row>
                 {this.state.item.map(product => (
                     <MediaBox key={product.id} src={product.Image} caption={product.ProductDescr} width="350"/>
                 ))}
             </Row> 
+            
+            <Row className="">
+            {this.state.item.map(product => (
+            <Col key={product.id} className=" leftMv25 valign-wrapper "> 
+                <Input  s={4} type='text' label="Price" validate value={product.Price}/>
+            </Col>
+            ))}
+            </Row> 
+            </div>
         );
     }
 }

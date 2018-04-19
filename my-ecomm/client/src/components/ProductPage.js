@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Col, Row, Input, Button, Icon, Toast} from 'react-materialize';
+import {Col, Row, Input, Button, Icon} from 'react-materialize';
 import ProductCard from './ItemCard';
 import API from "../utils/API";
 import '../App.css';
@@ -55,11 +55,10 @@ class ProductPage extends Component {
         API.getSelectedItem(id)
             .then(res =>
                 //console.log(res.data)
-                 this.setState({
+                this.setState({
                   item: res.data
                 })
-            ).catch(err => console.log(err));
-            console.log(this.state)            
+            ).catch(err => console.log(err));         
     };
 
    
@@ -74,14 +73,15 @@ class ProductPage extends Component {
                 </Col>
                 
                     <Col>  
-                    <form> 
+                    <form>
+                     
                         <Row className="leftMv50">
                             <Input className="leftMv50" type='select' label='Select Option' defaultValue='1'>
                                 <option value='1'>Option 1</option>
                                 <option value='2'>Option 2</option>
                                 <option value='3'>Option 3</option>
                             </Input>
-                        </Row> 
+                        </Row>
                         <Col className=" leftMv25 valign-wrapper ">
                             <a className="btn-floating btn-large waves-effect waves-light red prefix" onClick={this.handleIncrement}><i className="material-icons">add</i></a>
                         </Col>
